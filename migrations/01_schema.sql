@@ -36,13 +36,6 @@ CREATE TABLE properties (
   active BOOLEAN NOT NULL DEFAULT TRUE
 );
 
--- CREATE TABLE rates (
---   id SERIAL PRIMARY KEY NOT NULL,
---   start_date DATE,
---   end_date DATE,
---   cost_per_night INTEGER,
---   property_id INTEGER REFERENCES properties(id) NOT NULL
--- );
 
 CREATE TABLE reservations (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -62,6 +55,9 @@ CREATE TABLE property_reviews (
   message TEXT
 );
 
+
+-- Not sure if we will ever use, keeping for future use if it ever arises
+
 -- CREATE TABLE guest_reviews (
 --   id SERIAL PRIMARY KEY NOT NULL,
 --   guest_id INTEGER REFERENCES users(id) NOT NULL,
@@ -69,4 +65,11 @@ CREATE TABLE property_reviews (
 --   reservation_id INTEGER REFERENCES reservations(id) NOT NULL,
 --   rating INTEGER,
 --   message VARCHAR(255)
+-- );
+-- CREATE TABLE rates (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   start_date DATE,
+--   end_date DATE,
+--   cost_per_night INTEGER,
+--   property_id INTEGER REFERENCES properties(id) NOT NULL
 -- );
