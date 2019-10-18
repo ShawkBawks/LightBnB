@@ -112,6 +112,7 @@ const getAllProperties = function(options, limit = 10) {
  if (options.city) {
    queryParams.push(`%${options.city}%`);
    queryString += `${queryParams.length === 1 ? 'WHERE' : 'AND'} city LIKE $${queryParams.length}`;
+ }
  
  if (options.owner_id) {
    queryParams.push(Number(options.owner_id));
@@ -144,10 +145,6 @@ const getAllProperties = function(options, limit = 10) {
  // 5
  console.log(queryString, queryParams);
 
- return pool.query(queryString, queryParams)
- .then(res => res.rows);
-}
- // 6
  return pool.query(queryString, queryParams)
  .then(res => res.rows);
 }
